@@ -1,0 +1,14 @@
+# Ignore environment files with secrets
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+dist/
+build/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
