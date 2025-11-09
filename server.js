@@ -33,14 +33,17 @@ const contentRoutes = require('./routes/contentRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const recommendRoutes = require('./routes/recommendRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const { mongo, default: mongoose } = require('mongoose');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/recommendations', recommendRoutes);
 app.use('/api/admin', adminRoutes);
-app.get("/", (req,res)=>{
-res.status(200).send("Welcome to mflix")
+app.get("/",async (req,res)=>{
+  const db = await mongoose.modelNames()
+  console.log(db)
+res.status(200).send(`Welcome to mflix. Collections are: ${db}`)
 })
 // --- end added ---
 
