@@ -39,6 +39,9 @@ app.use('/api/content', contentRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/recommendations', recommendRoutes);
 app.use('/api/admin', adminRoutes);
+app.get("/", (req,res)=>{
+res.status(200).send("Welcome to mflix")
+})
 // --- end added ---
 
 console.log('=== Server Starting ===');
